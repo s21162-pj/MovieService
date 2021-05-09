@@ -1,11 +1,13 @@
 package pl.pjatk.robmov.model;
 
+import pl.pjatk.robmov.Service.Category;
+
 public class Movie {
     private Long id;
     private String name;
-    private String category;
+    private Enum<Category> category;
 
-    public Movie(Long id, String name, String category) {
+    public Movie(Long id, String name, Enum<Category> category) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -30,11 +32,11 @@ public class Movie {
         this.name = name;
     }
 
-    public String getCategory() {
+    public Enum<Category> getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Enum<Category> category) {
         this.category = category;
     }
 }
