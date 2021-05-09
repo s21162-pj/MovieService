@@ -10,8 +10,8 @@ public class MovieService {
 
     public List<Movie> findAllMovies() {
         return List.of(
-                new Movie(1L, "Fast and furious", "Action");
-        );
+                new Movie(1L, "Fast and furious", "Action"));
+
     }
 
     public Movie findMovieByID(Long ID) {
