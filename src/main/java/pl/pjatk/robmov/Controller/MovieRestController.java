@@ -28,6 +28,16 @@ public class MovieRestController {
     }
     @PostMapping
     public ResponseEntity<Movie> addNewMovie(@RequestBody Movie movie){
-        return ResponseEntity.ok(movieService.addMovie(movie));
+        return ResponseEntity.ok(movieService.addNewMovie(movie));
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<Movie> updateMovie(@RequestBody Movie movie, @PathVariable Long ID) {
+        return ResponseEntity.ok(movieService.updateMovie(movie, ID));
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteMovieByID(@PathVariable Long ID) {
+        movieService.deleteMovieByID(ID);
+        return ResponseEntity.ok().build();
+    }
+
 }

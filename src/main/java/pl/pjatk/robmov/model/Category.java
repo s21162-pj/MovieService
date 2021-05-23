@@ -1,4 +1,4 @@
-package pl.pjatk.robmov.Service;
+package pl.pjatk.robmov.model;
 
 public enum Category {
     ACTION,

@@ -1,6 +1,7 @@
 package pl.pjatk.robmov.Service;
 
 import org.springframework.stereotype.Service;
+import pl.pjatk.robmov.model.Category;
 import pl.pjatk.robmov.model.Movie;
 
 import java.util.List;
@@ -16,5 +17,17 @@ public class MovieService {
 
     public Movie findMovieByID(Long ID) {
         return new Movie(2L, "Tokyo Drift", Category.ACTION);
+    }
+
+    public Movie addNewMovie (Movie movie) {
+        return movie;
+    }
+
+    public Movie updateMovie (Movie movie, Long ID) {
+        return new Movie(ID, movie.getName(), movie.getCategory());
+    }
+
+    public Long deleteMovieByID(Long ID) {
+        return ID;
     }
 }

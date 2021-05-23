@@ -1,7 +1,5 @@
 package pl.pjatk.robmov.model;
 
-import pl.pjatk.robmov.Service.Category;
-
 public class Movie {
     private Long id;
     private String name;
