@@ -1,14 +1,23 @@
 package pl.pjatk.robmov.model;
 
+
+import javax.persistence.*;
+
+@Entity
 public class Movie {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Enum<Category> category;
+    @Enumerated(EnumType.STRING)
+    private Category category;
+    private boolean available = false;
 
-    public Movie(Long id, String name, Enum<Category> category) {
+    public Movie(Long id, String name, Category category, boolean available) {
         this.id = id;
         this.name = name;
         this.category = category;
+        this.available = available;
     }
 
     public Movie() {
@@ -30,12 +39,16 @@ public class Movie {
         this.name = name;
     }
 
-    public Enum<Category> getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(Enum<Category> category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
+
+    public boolean getAvailable() { return available; }
+
+    public void setAvailable(boolean available) { available = available; }
 }
 
